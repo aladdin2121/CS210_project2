@@ -234,8 +234,8 @@ git config --global user.name "Tolga Can"
 Create a private repository for this project under your own user name. For example, I created a private repo named **csci210_project2** and my github username is tolgacan. A private repo can be created from the GitHub web site by going to your repositories after clicking on your profile picture (e.g., https://github.com/tolgacan?tab=repositories) and clicking on the "New" button in the top right corner. After that, you can enter a command sequence similar to the one below to clone the starter repo and copy it to your private repo to work with. The **project2** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
 
 ```
-git clone git@github.com:CSCI210Mines/project2_spring25.git
-cd project2_spring25
+git clone git@github.com:CSCI210Mines/project2_fall25.git
+cd project2_fall25
 git remote remove origin
 git remote add origin git@github.com:tolgacan/csci210_project2.git  # this is my private repo. replace it with your own private repo
 git branch -M main
