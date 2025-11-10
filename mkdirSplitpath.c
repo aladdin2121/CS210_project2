@@ -179,7 +179,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     //finding the parent node by traversing dirName
     
     //if path_to_traverse is empty then the parent is the starting node
-    if (strlen(path_to_traverse) == 0 || strcmp(dirName, "/") == 0 || strcmp(dirName, ".") == 0) {
+    if (strlen(path_to_traverse) == 0) {
         return start_node;
     }
 
