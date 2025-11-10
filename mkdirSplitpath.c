@@ -175,7 +175,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     char* path_for_tokenization = temp_dir_path;
     
     //skip the leading '/' for absolute paths by advancing the pointer
-    if (path_for_tokenization[0] == '/') {
+    if (path_for_tokenization[0] == '/'&& strlen(path_for_tokenization) > 1) {
         path_for_tokenization++;
     }
 
