@@ -111,7 +111,7 @@ void mkdir(char pathName[]){
 //handles tokenizing and absolute/relative pathing options
 struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
-    char temp_path[128];
+   
     char* token;
     struct NODE* start_node;
     struct NODE* parent_node;
@@ -139,7 +139,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         }
         strcpy(dirName, "/");
         strcpy(baseName, last_slash + 1);
-        strcpy(path_to_traverse, "");)
+        strcpy(path_to_traverse, "");
         start_node = root;
    
     }
@@ -180,7 +180,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
     //tokenize the directory path
     char* saveptr;
-    token = strtok_r(temp_dir_path, "/", &saveptr); 
+    token = strtok(temp_dir_path, "/", &saveptr); 
     
     parent_node = start_node;
     
@@ -198,7 +198,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         }
 
         parent_node = next_node;
-        token = strtok_r(NULL, "/", &saveptr);
+        token = strtokr(NULL, "/", &saveptr);
     }
     
     //parent_node to return is the parent of baseName
