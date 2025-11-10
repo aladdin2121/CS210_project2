@@ -130,7 +130,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         //case when "f1.txt" is relative with no '/')
 
         strcpy(dirName, "");
-        //used strncpy to use 3 arguments
+        //used strncpy to use 3 arguments and make sure in the line after that there is no overflow
         strncpy(baseName, pathName, 63);
         baseName[63] = '\0';
         start_node = cwd;
@@ -190,7 +190,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     }
 
     //tokenize the directory path
-    char* saveptr;
+    char* saveptr = NULL;
     //use strtok_r for multi arguments
     token = strtok_r(path_for_tokenization, "/", &saveptr); 
     
