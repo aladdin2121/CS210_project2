@@ -11,6 +11,8 @@
 extern struct NODE* root;
 extern struct NODE* cwd;
 
+
+struct NODE* splitPath(char* pathName, char* baseName, char* dirName);
 //function that searches for a child node by name in a parent's node
 struct NODE* search_child(struct NODE* parent, char* name) {
 
