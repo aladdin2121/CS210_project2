@@ -129,7 +129,8 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         //case when "f1.txt" is relative with no '/')
 
         strcpy(dirName, "");
-        strcpy(baseName, pathName);
+        strcpy(baseName, pathName, 63);
+        baseName[63] = '\0'
         start_node = cwd;
     }
     //case when there is only one / which is the root directory 
@@ -153,7 +154,9 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         size_t dir_len = last_slash - pathName;
         strncpy(dirName, pathName, dir_len);
         dirName[dir_len] = '\0';
-        strcpy(baseName, last_slash + 1);
+
+        strcpy(baseName, last_slash + 1, 63);
+        baseName[63] = '\0'
         strcpy(path_to_traverse, dirName);
         
         //determining the start node
