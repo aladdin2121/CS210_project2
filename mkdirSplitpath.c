@@ -137,7 +137,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         //case when "f1.txt" is relative with no '/')
 
         strcpy(dirName, "");
-        //used strncpy to use 3 arguments and make sure in the line after that there is no overflow
+    
         strcpy(baseName, pathName);
        
         start_node = cwd;
@@ -191,7 +191,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     path_for_tokenization = temp_dir_path;
     
     //skip the leading '/' for absolute paths by advancing the pointer
-    if (path_for_tokenization[0] == '/'&& strlen(path_for_tokenization) > 1) {
+    if (path_for_tokenization[0] == '/') {
         path_for_tokenization++;
     }
 
