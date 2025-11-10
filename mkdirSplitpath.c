@@ -1,4 +1,4 @@
-#define _POSIX_C_SOURCE 200809L//to use strtok_r function
+#define _XOPEN_SOURCE 700//to use strtok_r function
 #include "types.h"
 #include "string.h"
 /*struct NODE {
