@@ -171,16 +171,18 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     char temp_dir_path[128];
     strcpy(temp_dir_path, path_to_traverse);
     
-    //skip leading '/' if it's an absolute path
-
-    if (temp_dir_path[0] == '/' && strlen(temp_dir_path) > 1) {
-        //this is to ensure that a path like /a/b starts tokenizing at 'a'
-        strcpy(temp_dir_path, path_to_traverse + 1); 
+    //declare a temporary pointer for tokenization
+    char* path_for_tokenization = temp_dir_path;
+    
+    //skip the leading '/' for absolute paths by advancing the pointer
+    if (path_for_tokenization[0] == '/') {
+        path_for_tokenization++;
     }
 
     //tokenize the directory path
     char* saveptr;
-    token = strtok_r(temp_dir_path, "/", &saveptr); 
+    //use strtok_r for multi arguments
+    token = strtok_r(path_for_tokenization, "/", &saveptr); 
     
     parent_node = start_node;
     
