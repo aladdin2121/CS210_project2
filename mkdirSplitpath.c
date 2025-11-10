@@ -1,4 +1,5 @@
 #include "types.h"
+#include "string.h"
 /*struct NODE {
     char name [64];
     char fileType;
@@ -129,8 +130,9 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         //case when "f1.txt" is relative with no '/')
 
         strcpy(dirName, "");
-        strcpy(baseName, pathName, 63);
-        baseName[63] = '\0'
+        //used strncpy to use 3 arguments
+        strncpy(baseName, pathName, 63);
+        baseName[63] = '\0';
         start_node = cwd;
     }
     //case when there is only one / which is the root directory 
@@ -155,8 +157,8 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         strncpy(dirName, pathName, dir_len);
         dirName[dir_len] = '\0';
 
-        strcpy(baseName, last_slash + 1, 63);
-        baseName[63] = '\0'
+        strncpy(baseName, last_slash + 1, 63);
+        baseName[63] = '\0';
         strcpy(path_to_traverse, dirName);
         
         //determining the start node
@@ -170,7 +172,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     //finding the parent node by traversing dirName
     
     //if path_to_traverse is empty then the parent is the starting node
-    if (strlen(path_to_traverse) == 0 || strcmp(dirName, "/") == 0 || strcmp(dirName, '.') == 0) {
+    if (strlen(path_to_traverse) == 0 || strcmp(dirName, "/") == 0 || strcmp(dirName, ".") == 0) {
         return start_node;
     }
 
