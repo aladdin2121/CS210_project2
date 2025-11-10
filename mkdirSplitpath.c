@@ -169,7 +169,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
     //prepare path_to_traverse for tokenization
     char temp_dir_path[128];
-    strcpy(temp_dir_path, path_to_traverse);
+    strcpy(temp_dir_path, dirName);
     
     //declare a temporary pointer for tokenization
     char* path_for_tokenization = temp_dir_path;
