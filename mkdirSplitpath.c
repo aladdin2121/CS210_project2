@@ -134,7 +134,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
             
             strcpy(dirName, "/");
             strcpy(baseName, ""); 
-            return root->parentPtr; //NULL since it is root's parent
+            return root; //
 
         }
         strcpy(dirName, "/");
