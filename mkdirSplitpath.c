@@ -39,7 +39,7 @@ struct NODE* search_child(struct NODE* parent, char* name) {
 void mkdir(char pathName[]){
 
     char baseName[64];
-    char dirName[64];
+    char dirName[124];
     struct NODE* parent;
     struct NODE* newNode;
 
