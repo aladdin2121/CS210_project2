@@ -118,11 +118,11 @@ void mkdir(char pathName[]){
 struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
    
-    char* token;
-    struct NODE* start_node;
-    struct NODE* parent_node;
+    char* token = NULL;
+    struct NODE* start_node = NULL;
+    struct NODE* parent_node = NULL;
     char path_to_traverse[128] = "";//variable for the path that leads to the parent
-    char temp_dir_path[128];
+    char temp_dir_path[128] = "";
     char* path_for_tokenization = NULL;
     char* saveptr = NULL;
 
