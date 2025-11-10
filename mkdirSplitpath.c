@@ -1,6 +1,5 @@
 #include "types.h"
 #include "string.h"
-#define _POSIX_C_SOURCE 200809L
 /*struct NODE {
     char name [64];
     char fileType;
@@ -40,10 +39,10 @@ struct NODE* search_child(struct NODE* parent, char* name) {
 //make directory
 void mkdir(char pathName[]){
 
-    char baseName[64];
-    char dirName[124];
-    struct NODE* parent;
-    struct NODE* newNode;
+    char baseName[64] = "";
+    char dirName[124] = "";
+    struct NODE* parent = NULL;
+    struct NODE* newNode = NULL;
 
     //check for the case when the user gives no path name
     if (strcmp(pathName, "/") == 0) {
