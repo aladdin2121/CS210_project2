@@ -180,7 +180,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
     //tokenize the directory path
     char* saveptr;
-    token = strtok(temp_dir_path, "/", &saveptr); 
+    token = strtok_r(temp_dir_path, "/", &saveptr); 
     
     parent_node = start_node;
     
@@ -198,7 +198,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
         }
 
         parent_node = next_node;
-        token = strtokr(NULL, "/", &saveptr);
+        token = strtok_r(NULL, "/", &saveptr);
     }
     
     //parent_node to return is the parent of baseName
