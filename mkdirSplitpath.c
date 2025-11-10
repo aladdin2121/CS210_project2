@@ -121,6 +121,12 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     struct NODE* start_node;
     struct NODE* parent_node;
     char path_to_traverse[128] = "";//variable for the path that leads to the parent
+    char tem_dir_path[128];
+    char* path_for_tokenization = NULL;
+    char* saveptr = NULL;
+    char* last_slash = NULL;
+
+
 
     //separate baseName and dirName using strrchr which returns the last occurance of '/'
     char *last_slash = strrchr(pathName, '/');
@@ -178,11 +184,11 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     }
 
     //prepare path_to_traverse for tokenization
-    char temp_dir_path[128];
+   
     strcpy(temp_dir_path, dirName);
     
     //declare a temporary pointer for tokenization
-    char* path_for_tokenization = temp_dir_path;
+    path_for_tokenization = temp_dir_path;
     
     //skip the leading '/' for absolute paths by advancing the pointer
     if (path_for_tokenization[0] == '/'&& strlen(path_for_tokenization) > 1) {
@@ -190,7 +196,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     }
 
     //tokenize the directory path
-    char* saveptr = NULL;
+   
     //use strtok_r for multi arguments
     token = strtok_r(path_for_tokenization, "/", &saveptr); 
     
