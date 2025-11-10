@@ -1,5 +1,6 @@
 #include "types.h"
 #include "string.h"
+#define _POSIX_C_SOURCE 200809L
 /*struct NODE {
     char name [64];
     char fileType;
