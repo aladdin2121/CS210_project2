@@ -1,4 +1,4 @@
-#define _XOPEN_SOURCE 700//to use strtok_r function
+#define _XOPEN_SOURCE 700/*to use strtok_r function, the program faced difficulties without it on gradescope. Without it the compiler on gradescope saw token variable that uses strtok_r as int because it didn't recognize strtok_r function so it returned 1. however token variable is used in the while loop as char, and since it is an int without defining XOPEN_SOURCE 700 the loop doesn't run or runs forever*/ 
 #include "types.h"
 #include "string.h"
 /*struct NODE {
