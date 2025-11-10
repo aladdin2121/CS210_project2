@@ -121,10 +121,9 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
     struct NODE* start_node;
     struct NODE* parent_node;
     char path_to_traverse[128] = "";//variable for the path that leads to the parent
-    char tem_dir_path[128];
+    char temp_dir_path[128];
     char* path_for_tokenization = NULL;
     char* saveptr = NULL;
-    char* last_slash = NULL;
 
 
 
