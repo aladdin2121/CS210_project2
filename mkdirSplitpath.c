@@ -57,7 +57,7 @@ void mkdir(char pathName[]){
 
     //check if splitPath failed 
 
-    if (!parent) {
+    if (parent == NULL) {
 
         return;
     }
@@ -73,7 +73,7 @@ void mkdir(char pathName[]){
     //create and initialize newNODE
 
     newNode = (struct NODE*)malloc(sizeof(struct NODE));
-    if (!newNode) {
+    if (newNode == NULL) {
         printf("ERROR: Memory allocation failed.\n");
         return;
     }
@@ -96,12 +96,12 @@ void mkdir(char pathName[]){
     else {
         
 
-        struct NODE* lastSibling = parent->childPtr;
+        struct NODE* child = parent->childPtr;
 
-        while (lastSibling->siblingPtr != NULL) {
-            lastSibling = lastSibling->siblingPtr;
+        while (child->siblingPtr != NULL) {
+            child = child->siblingPtr;
         }
-        lastSibling->siblingPtr = newNode;
+        child->siblingPtr = newNode;
     }
 
    
