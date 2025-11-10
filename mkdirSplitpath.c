@@ -197,7 +197,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
     //tokenize the directory path
    
-    //use strtok_r for multi arguments
+    //use strtok_r for multi arguments and for safety
     token = strtok_r(path_for_tokenization, "/", &saveptr); 
     
     parent_node = start_node;
