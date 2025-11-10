@@ -145,7 +145,8 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName){
 
         }
         strcpy(dirName, "/");
-        strcpy(baseName, last_slash + 1);
+        strncpy(baseName, last_slash + 1, 63);
+        baseName[63]= '\0';
         strcpy(path_to_traverse, "");
         start_node = root;
    
