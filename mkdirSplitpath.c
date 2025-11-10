@@ -62,7 +62,11 @@ void mkdir(char pathName[]){
         return;
     }
     
-    
+    //prevent creation of a directory with an empty name for example path that ends with '/'
+    if (strlen(baseName) == 0) {
+        printf("MKDIR ERROR: cannot create directory with empty name\n"); 
+        return;
+    }
     //check if the directory already exists in the parent's node
 
     if (search_child(parent, baseName) != NULL) {
